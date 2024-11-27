@@ -18,13 +18,13 @@ const ShopContextProvider = (props) => {
 
   useEffect(() => {
     // console.log("hello from fetch");
-    fetch('http://localhost:4000/allproducts') 
+    fetch('https://mernstackstore.onrender.com/allproducts') 
           .then((res) => res.json()) 
           .then((data) => setProducts(data))
 
     if(localStorage.getItem("auth-token"))
     {
-      fetch('http://localhost:4000/getcart', {
+      fetch('https://mernstackstore.onrender.com/getcart', {
       method: 'POST',
       headers: {
         Accept:'application/form-data',
@@ -64,7 +64,7 @@ const ShopContextProvider = (props) => {
     // console.log(cartItems);
     if(localStorage.getItem("auth-token"))
     {
-      fetch('http://localhost:4000/addtocart', {
+      fetch('https://mernstackstore.onrender.com/addtocart', {
       method: 'POST',
       headers: {
         Accept:'application/form-data',
@@ -85,7 +85,7 @@ const ShopContextProvider = (props) => {
     setCartItems(newArr);
     if(localStorage.getItem("auth-token"))
     {
-      fetch('http://localhost:4000/removefromcart', {
+      fetch('https://mernstackstore.onrender.com/removefromcart', {
       method: 'POST',
       headers: {
         Accept:'application/form-data',
